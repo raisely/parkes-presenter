@@ -1,0 +1,37 @@
+{
+  "name": "parkes-presenter",
+  "version": "0.1.0",
+  "description": "Simple presentation layer for sequelize models",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raisely/parkes-presenter.git"
+  },
+  "keywords": [
+    "sequelize"
+  ],
+  "author": "Agency Ventures",
+  "license": "KWPL",
+  "bugs": {
+    "url": "https://github.com/raisely/parkes-presenter/issues"
+  },
+  "homepage": "https://github.com/raisely/parkes-presenter#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "mocha": "^4.0.1"
+  },
+  "dependencies": {
+  }
+}
