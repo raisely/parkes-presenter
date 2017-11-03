@@ -9,7 +9,7 @@ function defineUser(sequelize) {
 		bio: Sequelize.STRING,
 	});
 	Object.assign(sequelize.models.user, {
-		publicAttributes: ['uuid', 'key', 'name', 'bio'],
+		publicAttributes: ['uuid', 'key', 'name', 'bio', 'teamUuid', 'teamKey'],
 		privateAttributes: ['role'],
 		nestedModels: ['posts', 'team'],
 	});
@@ -29,9 +29,9 @@ function definePost(sequelize) {
 		followers: Sequelize.INTEGER,
 	});
 	Object.assign(sequelize.models.post, {
-		publicAttributes: ['uuid', 'key', 'title', 'body'],
-		privateAttributes: ['follows'],
-		nestedModels: [{ attribute: 'user', rename: 'author' }],
+		publicAttributes: ['uuid', 'key', 'title', 'body', 'authorUuid', 'authorKey'],
+		privateAttributes: ['followers'],
+		nestedModels: [{ association: 'user', rename: 'author' }],
 	});
 	sequelize.models.post.associate = (m) => {
 		m.post.belongsTo(m.user);
@@ -63,6 +63,7 @@ function defineComment(sequelize) {
 	});
 	Object.assign(sequelize.models.comment, {
 		publicAttributes: ['uuid', 'key', 'name'],
+		privateAttributes: [],
 		nestedModels: {
 			public: ['post'],
 			private: ['user'],
@@ -78,6 +79,7 @@ function configureDb() {
 	const sequelize = new Sequelize('parkesPresenterTest', 'parkes-test', 'parkes-password', {
 		dialect: 'sqlite',
 		operatorsAliases: false,
+		logging: false,
 	});
 
 	defineUser(sequelize);
@@ -121,10 +123,11 @@ function defineInit(sequelize) {
 			userId: user.id,
 		});
 
-		await sequelize.models.comments.create({
+		await sequelize.models.comment.create({
 			uuid: 'uuid_for_comment',
 			key: 'key_for_comment',
 			body: 'I say, I say, I say',
+			userId: user.id,
 		});
 	};
 }

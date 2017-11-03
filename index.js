@@ -1,3 +1,3 @@
-const presenter = require('./lib/jsonPresenter');
+const presenter = require('./lib/presenterWrapper');
 
 module.exports = presenter;
