@@ -15,9 +15,6 @@
       "no-use-before-define": ["error", "nofunc"],
       "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
       "no-param-reassign": ["error", { "props": false }],
-      "camelcase": ["error", { "properties": "always" }],
-      "import/no-extraneous-dependencies": ["error", {
-        "devDependencies": ["spec/**/*.js", "test/**/*.spec.js"]
-      }],
+      "camelcase": ["error", { "properties": "always" }]
     }
 }
