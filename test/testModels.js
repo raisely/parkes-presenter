@@ -48,7 +48,7 @@ function defineTeam(sequelize) {
 	Object.assign(sequelize.models.team, {
 		publicAttributes: ['uuid', 'key', 'name'],
 		privateAttributes: ['secretPower'],
-		nestedModels: ['user'],
+		nestedModels: ['users'],
 	});
 	sequelize.models.team.associate = (m) => {
 		m.team.hasMany(m.user);
