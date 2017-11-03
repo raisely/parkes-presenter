@@ -1,4 +1,4 @@
-Simple presentation to convert models to JSON.
+Simple, flexible JSON presentation methods for sequelize
 
 Useful in situations when a separate presentation layer or views would be overkill.
 Supports hiding internal ids and mapping them to external keys and creating the
