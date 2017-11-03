@@ -103,7 +103,7 @@ describe('jsonPresenter', () => {
 				console.warn.restore();
 			});
 			after(() => {
-				models.comment.$presentationOptions.warnMissing = false;
+				models.comment.$presentationOptions.missingAssociations = 'load';
 			});
 
 			function itDoesNotWarn() {
@@ -190,7 +190,7 @@ describe('jsonPresenter', () => {
 		it('includes private nested models', async () => {
 			const comment = await models.comment.findOne();
 			json = await comment.toPrivate();
-			expect(comment.user).to.include.all.keys(models.user.privateAttributes);
+			expect(json.user).to.include.all.keys(models.user.privateAttributes);
 		});
 	});
 });
