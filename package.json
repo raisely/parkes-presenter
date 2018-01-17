@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --inspect --watch",
+    "lint": "eslint .",
     "test-ci": "mocha"
   },
   "engines": {
