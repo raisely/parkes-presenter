@@ -11,8 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      
-    - name: Publish to NPM when missing
-      uses: geoblink/publish-to-npm@v1.0.2
+    - uses: primer/publish@master
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
