@@ -35,7 +35,7 @@
     "eslint-plugin-react": "^7.4.0",
     "mocha": "^4.0.1",
     "mocha-sinon": "^2.0.0",
-    "sequelize": "^4.22.0",
+    "sequelize": "^5.15.1",
     "sinon": "^4.1.0",
     "sinon-chai": "^2.14.0",
     "sqlite3": "^3.1.13"
