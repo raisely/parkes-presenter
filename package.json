@@ -1,6 +1,6 @@
 {
   "name": "parkes-presenter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple presentation layer for sequelize models",
   "main": "index.js",
   "scripts": {
