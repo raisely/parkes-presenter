@@ -14,3 +14,5 @@ jobs:
       
     - name: Publish to NPM when missing
       uses: geoblink/publish-to-npm@v1.0.2
+      env:
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
